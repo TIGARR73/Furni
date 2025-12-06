@@ -120,6 +120,10 @@ header{
     font-weight:600;
     line-height: 28px;
 }
+.nav-bar .logo-side .header__logo span{
+    color:var(--gray);
+}
+
 /* end logo */
 /* start hero section  */
 .hero-sec{
@@ -137,7 +141,7 @@ header{
      word-wrap: break-word;
 }
 .text-hero h1{
-    font-size:48px;
+    font-size:50px;
     font-weight:700;
     line-height: 56px;
     color:var(--white);
@@ -145,7 +149,7 @@ header{
     word-wrap: break-word;
 }
 .text-hero p{
-    font-size:16px;
+    font-size:18px;
     font-weight:400;
     line-height: 28px;
     color:var(--gray);
@@ -765,14 +769,6 @@ footer{
     position: relative;
     
 }
-footer .container{
-    width:100%;
-    height:auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 80px 80px ; 
-}
 footer .container h3{
     font-size: 18px;
     font-weight: 500;
@@ -930,6 +926,532 @@ footer .container h3 span{
 
 	/* end Footer Section */
 
+/* ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+	display: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	z-index: 1000;
+}
+
+.menu-toggle-icon {
+	display: block;
+	width: 30px;
+	height: 3px;
+	background-color: var(--white);
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: var(--white);
+	transition: all 0.3s ease;
+}
+
+.menu-toggle-icon::before {
+	top: -10px;
+}
+
+.menu-toggle-icon::after {
+	bottom: -10px;
+}
+
+.menu-toggle.active .menu-toggle-icon {
+	background: transparent;
+}
+
+.menu-toggle.active .menu-toggle-icon::before {
+	top: 0;
+	transform: rotate(45deg);
+}
+
+.menu-toggle.active .menu-toggle-icon::after {
+	bottom: 0;
+	transform: rotate(-45deg);
+}
+
+/* Responsive Styles for Large Tablets and Below (1024px) */
+@media (max-width: 1024px) {
+
+	.nav-bar .container {
+		padding: 20px 40px;
+	}
+
+	.hero-sec {
+		padding: 60px 0;
+	}
+
+	.text-hero {
+		padding: 60px 40px;
+	}
+
+	.text-hero h1 {
+		font-size: 42px;
+		line-height: 48px;
+	}
+
+	.hero__image img {
+		width: 400px;
+		right: 20px;
+		top: 100px;
+	}
+
+	.features {
+		padding: 60px 60px;
+		flex-direction: column;
+		height: auto;
+	}
+
+	.features .features__image .responsive-image {
+		position: relative;
+		width: 100%;
+		max-width: 525px;
+		height: auto;
+		right: auto;
+		top: auto;
+		margin: 40px auto;
+	}
+
+	.features .dots-yellow {
+		display: none;
+	}
+
+	.help-sec {
+		flex-direction: column;
+		height: auto;
+		padding: 60px 40px;
+	}
+
+	.help-sec .help-text {
+		margin: 0;
+		width: 100%;
+		align-items: flex-start;
+	}
+
+	.help-sec .help-images {
+		margin: 0;
+		position: relative;
+		height: 600px;
+	}
+
+	.help-sec .help-images .grid-1 {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.help-sec .help-images .grid-2 {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 300px;
+	}
+
+	.help-sec .help-images .grid-3 {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 500px;
+	}
+
+	.popular-product {
+		padding: 40px 40px;
+	}
+
+	.testimonials {
+		padding: 60px 40px;
+	}
+
+	.blog {
+		padding: 60px 40px;
+	}
+
+	.blog .text-blog {
+		padding: 0 40px;
+	}
+
+	footer .container {
+		padding: 0 40px 60px;
+	}
+}
+
+/* Responsive Styles for Tablets (768px - 1024px) */
+@media (max-width: 768px) {
+	.container {
+		padding: 0 20px;
+		flex-wrap: wrap;
+	}
+
+	.nav-bar .container {
+		padding: 15px 20px;
+		flex-wrap: wrap;
+	}
+
+	.menu-toggle {
+		display: block;
+		margin-left: auto;
+	}
+
+	.nav-list {
+		display: none;
+		width: 100%;
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: var(--green);
+		padding: 20px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		z-index: 999;
+	}
+
+	.nav-list.active {
+		display: flex;
+	}
+
+	.nav-list ul {
+		flex-direction: column;
+		width: 100%;
+		gap: 15px;
+		margin: 0;
+	}
+
+	.header-menu {
+		width: 100%;
+	}
+
+	.header-right {
+		width: 100%;
+		justify-content: flex-start;
+		margin-top: 15px;
+	}
+
+	.hero-sec {
+		padding: 40px 0;
+	}
+
+	.text-hero {
+		padding: 40px 20px;
+		width: 100%;
+	}
+
+	.text-hero h1 {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	.text-hero p {
+		font-size: 16px;
+	}
+
+	.hero__image {
+		display: none;
+	}
+
+	.products {
+		padding: 60px 0;
+	}
+
+	.products .container {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.products-text {
+		margin: 0 20px;
+		padding: 40px 0;
+		width: 100%;
+	}
+
+	.products .product {
+		width: 100%;
+		height: auto;
+		padding-top: 0;
+		margin-bottom: 30px;
+	}
+
+	.products .product img {
+		width: 250px;
+	}
+
+	.products .products__icon img {
+		margin-left: 0;
+		position: relative;
+	}
+
+	.features {
+		padding: 60px 20px;
+	}
+
+	.features .content {
+		width: 100%;
+	}
+
+	.features .text-features {
+		margin-bottom: 40px;
+	}
+
+	.features .features__items {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	.help-sec {
+		padding: 60px 20px;
+	}
+
+	.help-sec .help-text {
+		margin: 0;
+		padding: 0;
+	}
+
+	.help-sec .help-text ul {
+		grid-template-columns: 1fr;
+	}
+
+	.help-sec .help-images {
+		height: 400px;
+	}
+
+	.help-sec .help-images .grid-1 img {
+		width: 300px;
+	}
+
+	.help-sec .help-images .grid-2 img {
+		width: 200px;
+	}
+
+	.help-sec .help-images .grid-3 img {
+		width: 250px;
+	}
+
+	.popular-product {
+		padding: 40px 20px;
+		flex-direction: column;
+	}
+
+	.popular-product .cards {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.popular-product .cards .card {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.testimonials {
+		padding: 60px 20px;
+	}
+
+	.testimonials h2 {
+		font-size: 2rem;
+	}
+
+	.testimonials .quote {
+		font-size: 1rem;
+	}
+
+	.arrow {
+		display: none;
+	}
+
+	.blog {
+		padding: 60px 20px;
+	}
+
+	.blog .text-blog {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+		padding: 0 20px;
+	}
+
+	.blog .container {
+		grid-template-columns: 1fr;
+		margin-left: 0;
+		gap: 30px;
+	}
+
+	.blog .post-entry img {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	footer {
+		padding: 0 20px;
+	}
+
+	footer .container {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0 20px 40px;
+		gap: 30px;
+	}
+
+	.footer .sofa-img {
+		display: none;
+	}
+
+	.footer .linkes {
+		grid-template-columns: 1fr;
+		margin: 10px 20px 40px;
+	}
+
+	.footer .linkes .columns {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.footer .copyright {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+		padding: 20px;
+	}
+
+	.footer .copyright .container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+/* Responsive Styles for Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+	.container {
+		padding: 0 15px;
+	}
+
+	.nav-bar .container {
+		padding: 12px 15px;
+	}
+
+	.logo-side a {
+		font-size: 24px;
+	}
+
+	.text-hero h1 {
+		font-size: 28px;
+		line-height: 34px;
+	}
+
+	.text-hero p {
+		font-size: 14px;
+		margin-bottom: 30px;
+	}
+
+	.text-hero p a {
+		padding: 10px 20px;
+		font-size: 14px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+
+	.products-text .section__title {
+		font-size: 28px;
+		line-height: 34px;
+	}
+
+	.products .product img {
+		width: 200px;
+	}
+
+	.features .text-features .section__title {
+		font-size: 28px;
+	}
+
+	.help-sec .help-text h2 {
+		font-size: 28px;
+	}
+
+	.help-sec .help-images {
+		height: 300px;
+	}
+
+	.help-sec .help-images .grid-1 img {
+		width: 200px;
+	}
+
+	.help-sec .help-images .grid-2 img {
+		width: 150px;
+	}
+
+	.help-sec .help-images .grid-3 img {
+		width: 180px;
+	}
+
+	.popular-product .cards .card {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.popular-product .cards .text-card {
+		width: 100%;
+	}
+
+	.popular-product .cards .product-image img {
+		width: 100px;
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+
+	.testimonials h2 {
+		font-size: 1.5rem;
+	}
+
+	.testimonials .quote {
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	.blog .text-blog h2 {
+		font-size: 24px;
+	}
+
+	.footer .container .subscription-form {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.footer .container .subscription-form input {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.footer .linkes .rows p {
+		width: 100%;
+	}
+}
+
+/* Fix for responsive images */
+.responsive-image {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Utility classes for responsive text */
+@media (max-width: 768px) {
+	.section__title {
+		font-size: 28px !important;
+		line-height: 34px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.section__title {
+		font-size: 24px !important;
+		line-height: 30px !important;
+	}
+}
 
 
 
@@ -940,9 +1462,3 @@ footer .container h3 span{
 
 
 
-
-
-
-/* السيكشن الاول محتاج تعديلات زي الايقون وصورة الدوت والدوت االف اللوجو */
-/* السكشن التاني محتاج تعديلات في البوكس شادو بتاع الكاردات بتاعت البرودكتس     */
-/* تظبيط الريزبونسيف للموبيلات والاجهزخ الاكبر */
